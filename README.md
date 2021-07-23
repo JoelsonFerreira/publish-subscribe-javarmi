@@ -3,7 +3,8 @@
 * Compile os arquivos:
 
 ```bash
-    javac -d classes Cell.java Client.java ClientImpl.java Server.java ServerImpl.java
+    javac -d classes Hello.java Client.java Server.java ServerInterface.java
+    # javac -d classes Client.java ClientInterface.java Server.java ServerInterface.java Cell.java
 ```
 
 * Entre na pasta classes e execute RMIRegistry:
@@ -23,5 +24,5 @@
 * Na pasta hello, em um novo terminal, execute o cliente:
 
 ```bash
-    java -classpath classes -Djava.rmi.server.codebase=file:classes/ example.hello.Client
+    java -classpath classes -Djava.rmi.server.codebase=file:classes/ example.hello.Client [name]
 ```
