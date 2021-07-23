@@ -28,7 +28,6 @@ public class Server implements ServerInterface {
         if(clis != null) {
             for(String cli : clis) {
                 try {
-                    System.out.println("Sending message to " + cli + "...");
                     Registry registry = LocateRegistry.getRegistry();
                     ClientInterface stub = (ClientInterface) registry.lookup(cli);
                     stub.receive(key, o);
@@ -37,10 +36,6 @@ public class Server implements ServerInterface {
                     e.printStackTrace();
                 }
             }
-
-            System.out.println("Client list is empty.");
-        } else {
-            System.out.println("Clients not founded.");
         }
     }
     

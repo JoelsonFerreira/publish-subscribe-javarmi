@@ -45,10 +45,7 @@ public class Client implements ClientInterface, Serializable {
             try {
                 ClientInterface cli = new Client();
                 cli.setName(name);
-                System.out.println("A");
-                System.out.println(cli.getName());
-                System.out.println("B");
-
+                
                 ClientInterface clientStub = (ClientInterface)UnicastRemoteObject.exportObject(cli, 0);
                 Registry registry = LocateRegistry.getRegistry();
                 registry.bind(name, clientStub);
@@ -82,8 +79,6 @@ public class Client implements ClientInterface, Serializable {
                             System.out.print("Enter your message: ");
                             message = keyboard.nextLine();
 
-                            System.out.println("Sending message: " + message);
-
                             Cell o = new Cell();
                             o.set(message);
 
@@ -112,23 +107,6 @@ public class Client implements ClientInterface, Serializable {
                 }
 
                 keyboard.close();
-                
-                // System.err.println("Subscribind to: " + A + "\nPublishing: " + B + "\n");
-
-                // if (A != 0){          
-                //     Integer sub_key;
-                //     sub_key = A;
-                //     stub.subscribe(c, sub_key);
-                // }
-            
-                // if (B != 0){
-                //     Integer pub_key;
-                //     pub_key = B;
-                //     Cell o = new Cell(); // Create a fresh object
-                //     o.set(A);  // Qual valor irá para a Cell? o valor da key dela ou da key do sub?
-                //     stub.publish(pub_key, o);  // Publish the object
-                // }
-
             } catch (Exception e) {
                 System.err.println("Client exception: " + e.toString());
                 e.printStackTrace();
