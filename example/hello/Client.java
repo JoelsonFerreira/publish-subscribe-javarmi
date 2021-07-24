@@ -68,8 +68,10 @@ public class Client implements ClientInterface, Serializable {
 
                     Integer key;
 
-                    System.out.print("Enter key: ");
-                    key = keyboard.nextInt();
+                    if(opt != 0) {
+                        System.out.print("Enter key: ");
+                        key = keyboard.nextInt();
+                    }
 
                     switch (opt) {
                         case 1:
@@ -104,6 +106,8 @@ public class Client implements ClientInterface, Serializable {
                             System.out.println("Invalid option.");
                             break;
                     }
+
+                    System.out.println("\n\n-------------------------------------------------------------\n\n");
                 }
 
                 keyboard.close();
@@ -112,7 +116,7 @@ public class Client implements ClientInterface, Serializable {
                 e.printStackTrace();
             }
         } else {
-
+            System.out.println("Use the following command structure: 'java -classpath classes -Djava.rmi.server.codebase=file:classes/ example.hello.Client [name]");
         }        
     }
 }

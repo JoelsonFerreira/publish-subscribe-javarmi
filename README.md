@@ -3,8 +3,7 @@
 * Compile os arquivos:
 
 ```bash
-    javac -d classes Hello.java Client.java Server.java ServerInterface.java
-    # javac -d classes Client.java ClientInterface.java Server.java ServerInterface.java Cell.java
+    javac -d classes Client.java ClientInterface.java Server.java ServerInterface.java Cell.java
 ```
 
 * Entre na pasta classes e execute RMIRegistry:
